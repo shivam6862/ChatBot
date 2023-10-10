@@ -58,6 +58,7 @@ const ChatPages = () => {
           setConversationId={setConversationId}
           conversationId={conversationId}
           setInitialRender={setInitialRender}
+          setChat={setChat}
         />
       </div>
       <div style={{ flex: "4" }}>
