@@ -6,6 +6,8 @@ const getAllUsersRoute = require("./conversation/getAllUsersRoute");
 const createConversationRoute = require("./conversation/createConversationRoute");
 const addMessageToConversationRoutes = require("./conversation/addMessageToConversationRoutes");
 const getConversationRoutes = require("./conversation/getConversationRoutes");
+const updateChatNameRoutes = require("./conversation/updateChatNameRoutes");
+const deleteUserChatRoutes = require("./conversation/deleteUserChatRoutes");
 
 module.exports = routes = [
   insertSignInRoute,
@@ -16,4 +18,6 @@ module.exports = routes = [
   createConversationRoute,
   addMessageToConversationRoutes,
   getConversationRoutes,
+  updateChatNameRoutes,
+  deleteUserChatRoutes,
 ];

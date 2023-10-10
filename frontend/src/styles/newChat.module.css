@@ -11,12 +11,17 @@
   text-transform: uppercase;
 }
 .item {
-  color: var(--primary-color);
+  color: black;
   font-size: 1.2rem;
   width: -webkit-fill-available;
   padding: 0.5rem;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 .item:hover {
   background: #b0b0be;
@@ -25,4 +30,54 @@
 .active {
   background: #b0b0be;
   opacity: 0.9;
+}
+.changeName {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #474747;
+  border-radius: 5px;
+  z-index: 50;
+}
+.changeName > input {
+  all: unset;
+  border-radius: 6px;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  color: #474747;
+  background-color: white;
+  width: 75%;
+}
+.changeNameButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.25rem;
+}
+.changeNameButtons > svg {
+  color: white;
+}
+.changeNameButtons > svg:hover {
+  scale: 1.05;
+}
+.backdropEditName {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282c3f;
+  opacity: 0;
+  z-index: 10;
+  display: block;
 }

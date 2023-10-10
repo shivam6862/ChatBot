@@ -1,0 +1,69 @@
+.container {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-30vw, -20vh);
+  z-index: 100;
+}
+.box {
+  min-width: 25vw;
+  background-color: rgba(32, 33, 35, 1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 1rem;
+  animation: middle-top 0.5s;
+}
+.heading {
+  padding: 1.5rem;
+  color: rgba(217, 217, 227, 1);
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+.bottom {
+  padding: 1rem;
+  width: 100%;
+}
+.paragraph {
+  font-size: 1rem;
+}
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.cancel {
+  background-color: rgba(52, 53, 65, 1);
+  border-color: rgba(86, 88, 105, 1);
+  color: rgba(217, 217, 227, 1);
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.delete {
+  background-color: rgba(185, 28, 28, 1);
+  color: rgba(255, 255, 255, 1);
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@keyframes middle-top {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@media screen and (max-width: 900px) {
+  .box {
+    min-width: 40vh;
+  }
+}
