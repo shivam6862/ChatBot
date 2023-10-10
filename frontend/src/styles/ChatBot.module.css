@@ -40,6 +40,11 @@
   flex-direction: row;
   gap: 0.5rem;
   justify-content: flex-end;
+  align-items: center;
+}
+.right_image > svg:hover {
+  scale: 1.05;
+  color: var(--primary-color);
 }
 .cross {
   margin-left: auto;

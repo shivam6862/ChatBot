@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import classes from "../../styles/ChatBot.module.css";
-import Image from "next/image";
 import Header from "../header/Header";
 import useBot from "../../hook/useBot";
 import Chat from "./Chat";
 import FileUpload from "../upload/Upload";
 import useFileUpload from "../../hook/useFileUpload";
+import { BsFillSendFill } from "react-icons/bs";
 
 const ChatContainer = ({
   chat,
@@ -95,7 +95,7 @@ const ChatContainer = ({
           <div className={classes.spinner}></div>
         ) : (
           <div onClick={() => callBot()} className={classes.sending}>
-            <Image src="/send.svg" width={24} height={24} alt="location" />
+            <BsFillSendFill size={24} />
           </div>
         )}
       </div>

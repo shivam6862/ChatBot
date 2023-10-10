@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "../../styles/Upload.module.css";
-import Image from "next/image";
+import { GrUpload } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 
 const FileUpload = ({ setFile, selectedImage, setSelectedImage }) => {
   const handleFileChange = (e) => {
@@ -26,7 +27,7 @@ const FileUpload = ({ setFile, selectedImage, setSelectedImage }) => {
         onChange={handleFileChange}
       />
       <label htmlFor="file" className={classes.file_input_label}>
-        <Image src={"/upload.svg"} width={30} height={30} alt="upload" />
+        <GrUpload size={24} />
       </label>
       <div className={classes.fileImage}>
         {selectedImage && (
@@ -37,7 +38,7 @@ const FileUpload = ({ setFile, selectedImage, setSelectedImage }) => {
               setFile(null);
             }}
           >
-            X
+            <MdDelete size={15} />
           </div>
         )}
         {selectedImage && <img src={selectedImage} alt="file" />}

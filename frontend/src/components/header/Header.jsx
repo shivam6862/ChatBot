@@ -2,10 +2,10 @@
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import classes from "../../styles/ChatBot.module.css";
-import Svgsign from "../../ui/Svgsign";
 import { useRouter } from "next/navigation";
 import { useLocalStorage } from "../../hook/useLocalStorage";
 import AuthenticationContext from "../../store/authentication/Authentication-context";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = ({ id }) => {
   const router = useRouter();
@@ -31,7 +31,7 @@ const Header = ({ id }) => {
         <h3>Chat Bot {id}</h3>
         <div className={classes.right_part}>
           <div className={classes.right_image}>
-            <Svgsign />
+            <FaUserCircle size={24} />
           </div>
           <div
             className={`${classes.right_text}`}

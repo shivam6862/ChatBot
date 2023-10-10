@@ -8,13 +8,13 @@ import ThemeContext from "../../store/theme/Theme-context";
 import Navbar from "../../components/navbar/navbar";
 
 export default function Home() {
-    const themeCtx = useContext(ThemeContext);
+  const themeCtx = useContext(ThemeContext);
 
-    return (
-        <div className={themeCtx.theme ? classes['dark-theme'] : undefined}>
-            <Navbar />
-            <HomeTitle />
-            <HomeInfo />
-        </div>
-    );
+  return (
+    <div className={themeCtx.theme ? classes["dark-theme"] : undefined}>
+      <Navbar />
+      <HomeTitle />
+      <HomeInfo />
+    </div>
+  );
 }

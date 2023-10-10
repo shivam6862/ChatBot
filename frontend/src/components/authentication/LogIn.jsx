@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useContext } from "react";
 import classes from "../../styles/Auth.module.css";
-import Svgcross from "../../ui/Svgcross";
 import AuthenticationContext from "../../store/authentication/Authentication-context";
 import useAuth from "../../hook/useAuth";
 import Image from "next/image";
+import { RxCross1 } from "react-icons/rx";
 
 const LogIn = () => {
   const { Auth } = useAuth();
@@ -40,7 +40,7 @@ const LogIn = () => {
             hideHandler();
           }}
         >
-          <Svgcross />
+          <RxCross1 size={30} />
         </div>
         <div className={classes.part1}>
           <div className={classes.part1_left}>

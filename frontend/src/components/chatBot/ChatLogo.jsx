@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BsFillChatLeftDotsFill } from "react-icons/bs";
 
 const ChatLogo = ({ dim, dimL }) => {
   return (
@@ -19,7 +19,7 @@ const ChatLogo = ({ dim, dimL }) => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <Image src="/chat.png" width={dim} height={dim} alt="chat" />
+        <BsFillChatLeftDotsFill size={dim} color="white" />
       </div>
     </div>
   );

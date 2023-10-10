@@ -45,7 +45,7 @@ const ChatItem = ({ data }) => {
       ) : (
         <div className={classes.left}>
           <div className={classes.avatar}>
-            <ChatLogo dimL={"22px"} dim={14} />
+            <ChatLogo dimL={"22px"} dim={12} />
             <p>Chating Bot</p>
           </div>
           <div className={classes["chat-left"]}>{formattedLines}</div>
