@@ -23,34 +23,39 @@
     transform: translateY(0);
   }
 }
-.section h1 {
+.content > h1 {
   position: relative;
   font-size: 4rem;
   margin: 0;
 }
-.section p {
+.content > p {
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--gray);
 }
-.section button {
+.content > a {
+  all: unset;
   position: relative;
   margin-top: 3rem;
   background-color: var(--primary-color);
   appearance: none;
-  border-radius: 1rem;
-  padding: 1rem 2rem;
+  border-radius: 10px;
+  padding: 0.75rem 1.7rem;
   color: var(--white-light-color);
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid black;
 }
 .shape {
   position: absolute;
   background-color: var(--primary-color);
   border-radius: 50%;
-  height: 1000px;
-  width: 1000px;
-  top: -500px;
-  left: -500px;
+  height: 900px;
+  width: 900px;
+  top: -450px;
+  left: -450px;
   animation: resize 1.5s forwards;
 }
 @keyframes resize {
@@ -61,5 +66,45 @@
   to {
     scale: 1;
     opacity: 1;
+  }
+}
+@media screen and (max-width: 940px) {
+  .section {
+    padding: 6rem 3.5rem 1rem 3.5rem;
+  }
+  .content > h1 {
+    font-size: 3rem;
+  }
+  .content > p {
+    font-size: 1.25rem;
+  }
+  .shape {
+    height: 700px;
+    width: 700px;
+    top: -350px;
+    left: -350px;
+  }
+  .content > a {
+    padding: 0.5rem 1.2rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .section {
+    padding: 4rem 3rem 1rem 3rem;
+  }
+  .content > h1 {
+    font-size: 2rem;
+  }
+  .content > p {
+    font-size: 1rem;
+  }
+  .shape {
+    height: 400px;
+    width: 400px;
+    top: -200px;
+    left: -200px;
+  }
+  .content > a {
+    padding: 0.5rem 1rem;
   }
 }

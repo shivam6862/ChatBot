@@ -48,4 +48,9 @@ body {
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+  --background-color-hamburger: radial-gradient(
+    74.17% 74.17% at 50% 78.96%,
+    rgba(51, 51, 51, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }

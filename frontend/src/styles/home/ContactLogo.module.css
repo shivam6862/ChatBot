@@ -1,0 +1,15 @@
+.container {
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 340px) {
+  .box {
+    gap: 1rem;
+  }
+}

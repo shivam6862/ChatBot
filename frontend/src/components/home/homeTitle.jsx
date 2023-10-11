@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import classes from "../../styles/home/homeTitle.module.css";
 import useScrollRatio from "../../hook/scrollRatio";
+import Link from "next/link";
 
 export default function HomeTitle() {
   const element = useRef();
@@ -17,8 +18,8 @@ export default function HomeTitle() {
       <div className={classes.shape}></div>
       <div className={classes.content}>
         <h1>Knowledge at your doorstep</h1>
-        <p>Knowledge at your doorstep</p>
-        <button>Try Now</button>
+        <p>Efficient, Enjoyable Interactions for All.</p>
+        <Link href={"/chat"}>Chat Now</Link>
       </div>
     </section>
   );
