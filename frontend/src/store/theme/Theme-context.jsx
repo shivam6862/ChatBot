@@ -1,7 +1,6 @@
 "use client";
-
-import React, { useState } from "react";
-import { useLocalStorage } from "../../hook/useLocalStorage";
+import React, { useEffect, useState } from "react";
+import { useCookies } from "../../hook/useCookies";
 
 const ThemeContext = React.createContext({
   theme: false,
@@ -10,6 +9,13 @@ const ThemeContext = React.createContext({
 
 export function ThemeContextProvider(props) {
   const [theme, setTheme] = useState(false);
+  const { fetchCookies } = useCookies();
+
+  useEffect(() => {
+    const color = fetchCookies();
+    if (color == "dark") setTheme(true);
+    else setTheme(false);
+  }, []);
 
   function toggleThemeHandler() {
     setTheme((theme) => !theme);

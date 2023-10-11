@@ -1,6 +1,5 @@
 const getOpt = require("../../db/authentication/getOpt");
 const deleteOtp = require("../../db/authentication/deleteOtp");
-const updateUser = require("../../db/authentication/updateUser");
 const getUser = require("../../db/authentication/getUsers");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -24,16 +23,16 @@ module.exports = insertVerifyRoute = {
           {
             _id: user.id,
             number: number,
+            authenticated: true,
           },
           process.env.JWT_SECRET_KEY,
           { expiresIn: "15d" }
         );
-        const response = await updateUser(number, token);
         const result = await deleteOtp(number);
         return res.status(200).send({
           message: "User Sign In Sucessfully",
           token: token,
-          data: response,
+          data: user,
           navigate: "true",
         });
       } else {

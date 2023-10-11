@@ -7,19 +7,25 @@ import useScrollRatio from "../../hook/scrollRatio";
 import { FiSun } from "react-icons/fi";
 import { BsMoonFill } from "react-icons/bs";
 import Link from "next/link";
+import { useCookies } from "../../hook/useCookies";
 
 export default function Navbar() {
+  const { updateCookies, fetchCookies } = useCookies();
   const themeCtx = useContext(ThemeContext);
   const element = useRef();
   useScrollRatio((height) => {
     const scroll = window.scrollY;
-
     if (scroll <= 500) element.current.style.opacity = 0;
     else element.current.style.opacity = 1;
   }, element.current);
 
   function changeTheme(e) {
     themeCtx.toggleTheme();
+    if (fetchCookies() == "light") {
+      updateCookies("dark");
+    } else {
+      updateCookies("light");
+    }
   }
 
   return (
@@ -33,7 +39,12 @@ export default function Navbar() {
         <li>Work</li>
         <li>Contact</li>
       </ul>
-      <input type="checkbox" id="theme-toggle" onChange={changeTheme} />
+      <input
+        type="checkbox"
+        id="theme-toggle"
+        onChange={changeTheme}
+        checked={themeCtx.theme}
+      />
       <label htmlFor="theme-toggle">
         <div>
           {themeCtx.theme ? (

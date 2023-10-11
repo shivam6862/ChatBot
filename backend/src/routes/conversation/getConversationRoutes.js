@@ -1,6 +1,6 @@
 const getConversation = require("../../db/conversation/getConversation");
 const getCanUserAccessConversation = require("../../db/conversation/getCanUserAccessConversation");
-const getToken = require("../../db/conversation/getUserToken");
+const jwt = require("jsonwebtoken");
 
 module.exports = getConversationRoutes = {
   method: "get",
@@ -8,7 +8,6 @@ module.exports = getConversationRoutes = {
   handler: async (req, res) => {
     try {
       const { conversationId, userId } = req.params;
-      const token = await getToken(userId);
 
       const userIsAuthorized = await getCanUserAccessConversation(
         userId,
@@ -27,7 +26,18 @@ module.exports = getConversationRoutes = {
           ],
         });
       }
-      if (!userIsAuthorized || req.headers.authorization !== token) {
+      const decoded = jwt.verify(
+        req.headers.authorization,
+        process.env.JWT_SECRET_KEY
+      );
+
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+
+      if (
+        !userIsAuthorized ||
+        !decoded.authenticated ||
+        currentTimestamp > decoded.exp
+      ) {
         return res.status(403).json({
           conversation: [
             {

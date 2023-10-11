@@ -1,5 +1,5 @@
 const getUserConversations = require("../../db/conversation/getUserConversations");
-const getToken = require("../../db/conversation/getUserToken");
+const jwt = require("jsonwebtoken");
 
 module.exports = getUserConversationsRoute = {
   method: "get",
@@ -7,9 +7,18 @@ module.exports = getUserConversationsRoute = {
   handler: async (req, res) => {
     try {
       const { id: userId } = req.params;
-      const token = await getToken(userId);
 
-      if (req.headers.authorization !== token) {
+      const decoded = jwt.verify(
+        req.headers.authorization,
+        process.env.JWT_SECRET_KEY
+      );
+
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+
+      if (decoded.authenticated && currentTimestamp <= decoded.exp) {
+        const conversations = await getUserConversations(userId);
+        res.status(200).json(conversations);
+      } else {
         return res.status(403).json([
           {
             id: "null",
@@ -17,14 +26,14 @@ module.exports = getUserConversationsRoute = {
           },
         ]);
       }
-      const conversations = await getUserConversations(userId);
-      res.status(200).json(conversations);
     } catch (err) {
       console.log("getUserConversationsRoute " + err.message);
-      return res.status(400).send({
-        error: "Server Error!",
-        message: [],
-      });
+      return res.status(404).send([
+        {
+          id: "null",
+          name: "Users are only allowed to access conversations",
+        },
+      ]);
     }
   },
 };
