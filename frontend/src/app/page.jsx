@@ -4,6 +4,8 @@ import classes from "../styles/home/Home.module.css";
 import Header from "../components/home/Header";
 import HomeTitle from "../components/home/homeTitle";
 import ThemeContext from "../store/theme/Theme-context";
+import AboutHome from "../components/home/AboutHome";
+import KnowAboutCompany from "../components/home/KnowAboutCompany";
 
 export default function Home() {
   const themeCtx = useContext(ThemeContext);
@@ -16,6 +18,8 @@ export default function Home() {
     >
       <Header />
       <HomeTitle />
+      <AboutHome />
+      <KnowAboutCompany />
     </div>
   );
 }

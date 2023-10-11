@@ -5,6 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(#000c1e, #1b1b17);
+  padding-bottom: 3rem;
+  min-height: 80vh;
 }
 .content {
   display: flex;
@@ -27,6 +30,7 @@
   position: relative;
   font-size: 4rem;
   margin: 0;
+  color: white;
 }
 .content > p {
   position: relative;
@@ -37,7 +41,7 @@
   all: unset;
   position: relative;
   margin-top: 3rem;
-  background-color: var(--primary-color);
+  background-color: #1b222f;
   appearance: none;
   border-radius: 10px;
   padding: 0.75rem 1.7rem;
@@ -50,12 +54,12 @@
 }
 .shape {
   position: absolute;
-  background-color: var(--primary-color);
+  background-color: #1b222f;
   border-radius: 50%;
-  height: 900px;
-  width: 900px;
-  top: -450px;
-  left: -450px;
+  height: 850px;
+  width: 850px;
+  top: -425px;
+  left: -425px;
   animation: resize 1.5s forwards;
 }
 @keyframes resize {
@@ -71,6 +75,7 @@
 @media screen and (max-width: 940px) {
   .section {
     padding: 6rem 3.5rem 1rem 3.5rem;
+    min-height: 70vh;
   }
   .content > h1 {
     font-size: 3rem;
@@ -91,6 +96,7 @@
 @media screen and (max-width: 540px) {
   .section {
     padding: 4rem 3rem 1rem 3rem;
+    min-height: 50vh;
   }
   .content > h1 {
     font-size: 2rem;

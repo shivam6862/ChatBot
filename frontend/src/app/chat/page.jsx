@@ -7,6 +7,7 @@ import { useFetchUserChatById } from "../../hook/useFetchUserChatById";
 import LoadingSpinner from "../../ui/LoadingSpinner";
 import ChatBot from "../../components/chatBot/ChatBot";
 import { useRouterPush } from "../../hook/useRouterPush";
+import Footer from "../../components/footer/Footer";
 
 const ChatPages = () => {
   const { routerPushChange } = useRouterPush();
@@ -50,29 +51,37 @@ const ChatPages = () => {
     <div
       style={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
       }}
     >
-      <div style={{ flex: "1" }}>
-        <NewChat
-          setConversationId={setConversationId}
-          conversationId={conversationId}
-          setInitialRender={setInitialRender}
-          setChat={setChat}
-        />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <div style={{ flex: "1" }}>
+          <NewChat
+            setConversationId={setConversationId}
+            conversationId={conversationId}
+            setInitialRender={setInitialRender}
+            setChat={setChat}
+          />
+        </div>
+        <div style={{ flex: "4" }}>
+          <ChatBot
+            id={conversationId}
+            chat={chat}
+            setChat={setChat}
+            initialRender={initialRender}
+            setInitialRender={setInitialRender}
+            setConversationId={setConversationId}
+            messageHistory={messageHistory}
+            setMessageHistory={setMessageHistory}
+          />
+        </div>
       </div>
-      <div style={{ flex: "4" }}>
-        <ChatBot
-          id={conversationId}
-          chat={chat}
-          setChat={setChat}
-          initialRender={initialRender}
-          setInitialRender={setInitialRender}
-          setConversationId={setConversationId}
-          messageHistory={messageHistory}
-          setMessageHistory={setMessageHistory}
-        />
-      </div>
+      <Footer />
     </div>
   );
 };

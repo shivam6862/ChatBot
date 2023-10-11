@@ -1,0 +1,222 @@
+.container {
+  width: 100%;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: -webkit-fill-available;
+  background: #ffd000;
+}
+.top_contant {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  width: -webkit-fill-available;
+}
+.top_heading {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.top_right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.top_right > input {
+  all: unset;
+  appearance: none;
+  border: 1px solid #0f0f10;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  line-height: normal;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+  background: white;
+}
+.top_right > button {
+  all: unset;
+  padding: 0.75rem;
+  border: 1px solid black;
+  width: 50%;
+  font-size: 1rem;
+  background-color: #ee0007;
+  border-color: #ee0007;
+  color: #fff;
+  border-radius: 0.25rem;
+  text-align: center;
+  cursor: pointer;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 0rem 0rem 0rem;
+  background: linear-gradient(#000c1e, #1b1b17), url("/img/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: -webkit-fill-available;
+}
+.middle > h1 {
+  padding: 0rem;
+  margin: 0rem;
+  font-size: 3rem;
+  color: white;
+  padding: 1rem 1.5rem;
+}
+.middle > p {
+  padding: 0rem;
+  margin: 0rem;
+  font-size: 1.2rem;
+  color: white;
+  padding: 1rem 1.5rem;
+}
+.middle > img {
+  width: 100%;
+  height: 400px;
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: -webkit-fill-available;
+  background: #1b222f;
+}
+.bottom_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  width: -webkit-fill-available;
+  padding: 3rem 1.5rem;
+}
+.bottom_left {
+  flex: 1;
+}
+.bottom_left > img {
+  width: 100%;
+  height: 400px;
+}
+.bottom_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.bottom_right > h1 {
+  padding: 0rem;
+  margin: 0rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+}
+.bottom_right > p {
+  padding: 0rem;
+  margin: 0rem;
+  font-size: 1.2rem;
+  color: white;
+}
+.last_part {
+  width: -webkit-fill-available;
+}
+.last_part_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: -webkit-fill-available;
+  padding: 4rem 1.5rem;
+  background: white;
+}
+.last_part_container > img {
+  width: 100%;
+  height: 200px;
+}
+.last_part_container > h1 {
+  padding: 0rem;
+  margin: 0rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+.last_part_container > p {
+  padding: 0rem;
+  margin: 0rem;
+  font-size: 1.2rem;
+  color: black;
+  text-align: center;
+}
+@media screen and (max-width: 940px) {
+  .top_contant {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .top_heading {
+    font-size: 2.2rem;
+  }
+  .middle > h1 {
+    font-size: 1.7rem;
+  }
+  .middle > p {
+    font-size: 1rem;
+  }
+  .middle > img {
+    height: 300px;
+  }
+  .bottom_left > img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .top_right {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .middle > h1 {
+    font-size: 1.75rem;
+  }
+  .middle > img {
+    height: 250px;
+  }
+  .bottom_left > img {
+    height: 250px;
+  }
+  .bottom_container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .last_part_container > h1 {
+    font-size: 2rem;
+  }
+  .last_part_container > p {
+    font-size: 1rem;
+  }
+}

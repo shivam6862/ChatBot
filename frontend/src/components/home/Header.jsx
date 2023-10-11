@@ -142,7 +142,7 @@ const Header = () => {
             style={
               currentNav == index
                 ? isNavCollapsed
-                  ? { color: "var(--black-color)" }
+                  ? { color: "var(--primary-color)" }
                   : { color: "var(--primary-color)" }
                 : {}
             }

@@ -1,12 +1,10 @@
-import LineSvg from "../../../public/LineSvg";
-
 const Footer = () => {
   return (
     <div
       style={{
         width: "100%",
-        backgroundColor: "#0000ff",
-        padding: "0rem",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        padding: "0.25rem",
         color: "#ffffff",
         textAlign: "center",
         fontSize: "1rem",
@@ -14,7 +12,6 @@ const Footer = () => {
       }}
     >
       <div style={{ padding: "0.25rem" }}>Made with ❤ © 2023.. Made by us</div>
-      <LineSvg top={"#0000ff"} bottom={"#000000"} />
     </div>
   );
 };
