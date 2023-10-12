@@ -14,12 +14,14 @@ import Backdrop from "../../ui/Backdrop";
 import { useUpdateChatName } from "../../hook/useUpdateChatName";
 import { useDeleteChat } from "../../hook/useDeleteChat";
 import { useRouterPush } from "../../hook/useRouterPush";
+import { BsCaretLeftSquare } from "react-icons/bs";
 
 const NewChat = ({
   setConversationId,
   conversationId,
   setInitialRender,
   setChat,
+  setIsOpenNewchat,
 }) => {
   const {
     isLoading,
@@ -124,6 +126,9 @@ const NewChat = ({
         />
       )}
       <div className={classes.items}>
+        <div className={classes.toggle_newchat}>
+          <BsCaretLeftSquare size={18} onClick={setIsOpenNewchat} />
+        </div>
         <div
           className={`${classes.item} ${
             "new" === conversationId.substr(0, 3) ? classes.active : ""
@@ -134,9 +139,9 @@ const NewChat = ({
             setInitialRender(true);
           }}
         >
-          <div>
-            <AiOutlinePlus size={18} /> {"  "}
-            {"  "} New
+          <div className={classes.item_inside}>
+            <AiOutlinePlus size={16} />
+            New
           </div>
         </div>
 
@@ -160,8 +165,8 @@ const NewChat = ({
                   setConversationId(item.id);
                 }}
               >
-                <div id={item.id}>
-                  <BsChatLeft size={16} /> {"  "} {"  "}
+                <div id={item.id} className={classes.item_inside}>
+                  <BsChatLeft size={14} />
                   {item.name}
                   {isEditHandler.isCheck && item.id == isEditHandler.id && (
                     <>
@@ -183,11 +188,11 @@ const NewChat = ({
                         <div className={classes.changeNameButtons}>
                           <HiOutlineCheck
                             onClick={acceptEditNameHandler}
-                            size={20}
+                            size={16}
                           />
                           <AiOutlineClose
                             onClick={cancelEditNameHandler}
-                            size={16}
+                            size={12}
                           />
                         </div>
                       </div>
@@ -199,13 +204,12 @@ const NewChat = ({
                   )}
                 </div>
                 {item.id == conversationId && (
-                  <div id={item.id}>
+                  <div id={item.id} className={classes.changeNameButtons}>
                     <BiSolidEditAlt
                       onClick={() => {
                         editNameHandler(item.id, item.name);
                       }}
                     />
-                    {"  "}
                     <MdDelete
                       onClick={() => {
                         deleteChatHandler(item.id, item.name);

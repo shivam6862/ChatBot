@@ -19,3 +19,5 @@ backendPython/.env
 data
 backendPython/info_db
 backendPython/info_db
+
+frontend/public/img

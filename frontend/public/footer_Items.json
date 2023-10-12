@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Product",
+    "subcategories": ["Benefits", "Features", "Dynamic Responses"]
+  },
+  {
+    "category": "Integrations",
+    "subcategories": ["Customer Support", "Education", "Integrations"]
+  },
+  {
+    "category": "Chat Services",
+    "subcategories": ["Chat Widget", "LiveChat", "Shopify"]
+  },
+  {
+    "category": "Resources",
+    "subcategories": ["Help Center", "ChatBot Academy", "Blog", "System Status"]
+  },
+  {
+    "category": "Company",
+    "subcategories": ["About", "Partner Program", "Careers", "Legal"]
+  }
+]

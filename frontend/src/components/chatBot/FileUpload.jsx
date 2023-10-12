@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import classes from "../../styles/Upload.module.css";
-import { GrUpload } from "react-icons/gr";
+import classes from "../../styles/FileUpload.module.css";
+import { FiUpload } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
 const FileUpload = ({ setFile, selectedImage, setSelectedImage }) => {
@@ -26,8 +26,8 @@ const FileUpload = ({ setFile, selectedImage, setSelectedImage }) => {
         className={classes.file_input}
         onChange={handleFileChange}
       />
-      <label htmlFor="file" className={classes.file_input_label}>
-        <GrUpload size={24} />
+      <label htmlFor="file" className={classes.fileLabel}>
+        <FiUpload size={24} />
       </label>
       <div className={classes.fileImage}>
         {selectedImage && (

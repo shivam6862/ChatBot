@@ -4,7 +4,7 @@ import classes from "../../styles/ChatBot.module.css";
 import Header from "../header/Header";
 import useBot from "../../hook/useBot";
 import Chat from "./Chat";
-import FileUpload from "../upload/Upload";
+import FileUpload from "./FileUpload";
 import useFileUpload from "../../hook/useFileUpload";
 import { BsFillSendFill } from "react-icons/bs";
 

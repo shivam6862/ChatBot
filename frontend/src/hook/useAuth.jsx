@@ -1,9 +1,11 @@
 import { useLocalStorage } from "./useLocalStorage";
 import { useNotification } from "./useNotification";
+import { useCookies } from "./useCookies";
 
 const useAuth = () => {
   const { updatePersonalDetails } = useLocalStorage();
   const { NotificationHandler } = useNotification();
+  const { setIsLoggedInCookie } = useCookies();
   const Auth = async (data, type) => {
     try {
       const response = await fetch(
@@ -21,6 +23,7 @@ const useAuth = () => {
       NotificationHandler(responsedata.message, "Info");
       if (responsedata.navigate == "true" && type == "verify") {
         updatePersonalDetails(responsedata);
+        setIsLoggedInCookie(true);
       }
       return responsedata.navigate;
     } catch (err) {

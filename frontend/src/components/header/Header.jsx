@@ -8,12 +8,14 @@ import AuthenticationContext from "../../store/authentication/Authentication-con
 import { FaUserCircle } from "react-icons/fa";
 import ConfirmLogout from "./ConfirmLogout";
 import Backdrop from "../../ui/Backdrop";
+import Link from "next/link";
+import { useCookies } from "../../hook/useCookies";
 
 const Header = ({ id }) => {
   const router = useRouter();
   const authenticationContextCtx = useContext(AuthenticationContext);
   const { fetchPersonalDetails, removePersonalDetails } = useLocalStorage();
-
+  const { removeIsLoggedInCookies } = useCookies();
   const [isLogoutHandler, setIsLogOutHandler] = useState(false);
   const [user, setUser] = useState(null);
   useEffect(() => {
@@ -31,6 +33,7 @@ const Header = ({ id }) => {
   const acceptLogotHandler = () => {
     setIsLogOutHandler(false);
     removePersonalDetails();
+    removeIsLoggedInCookies();
     setUser(null);
     authenticationContextCtx.setDetails("noUser", "", "", "");
     router.push(`/`);
@@ -45,7 +48,11 @@ const Header = ({ id }) => {
           acceptLogotHandler={acceptLogotHandler}
         />
       )}
-      <Image src="/logo.jpg" width={50} height={50} alt="chat" />
+      <div className={classes.left_logo}>
+        <Link href={"/"}>
+          <Image src="/logo.jpg" width={50} height={50} alt="chat" />
+        </Link>
+      </div>
       <div className={classes.title}>
         <h3>Chat Bot {id}</h3>
         <div className={classes.right_part}>

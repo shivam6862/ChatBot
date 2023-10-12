@@ -5,6 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(
+    var(--black-000c1e--color),
+    var(--black-1b1b17--color)
+  );
+  padding-bottom: 3rem;
+  min-height: 80vh;
 }
 .content {
   display: flex;
@@ -23,34 +29,40 @@
     transform: translateY(0);
   }
 }
-.section h1 {
+.content > h1 {
   position: relative;
   font-size: 4rem;
   margin: 0;
+  color: var(--white-color);
 }
-.section p {
+.content > p {
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--gray);
 }
-.section button {
+.content > a {
+  all: unset;
   position: relative;
   margin-top: 3rem;
-  background-color: var(--primary-color);
+  background-color: var(--light-black-color);
   appearance: none;
-  border-radius: 1rem;
-  padding: 1rem 2rem;
+  border-radius: 10px;
+  padding: 0.75rem 1.7rem;
   color: var(--white-light-color);
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid var(--black-color);
 }
 .shape {
   position: absolute;
-  background-color: var(--primary-color);
+  background-color: var(--lighted-black-color);
   border-radius: 50%;
-  height: 1000px;
-  width: 1000px;
-  top: -500px;
-  left: -500px;
+  height: 850px;
+  width: 850px;
+  top: -425px;
+  left: -425px;
   animation: resize 1.5s forwards;
 }
 @keyframes resize {
@@ -61,5 +73,47 @@
   to {
     scale: 1;
     opacity: 1;
+  }
+}
+@media screen and (max-width: 940px) {
+  .section {
+    padding: 6rem 3.5rem 1rem 3.5rem;
+    min-height: 70vh;
+  }
+  .content > h1 {
+    font-size: 3rem;
+  }
+  .content > p {
+    font-size: 1.25rem;
+  }
+  .shape {
+    height: 700px;
+    width: 700px;
+    top: -350px;
+    left: -350px;
+  }
+  .content > a {
+    padding: 0.5rem 1.2rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .section {
+    padding: 4rem 3rem 1rem 3rem;
+    min-height: 50vh;
+  }
+  .content > h1 {
+    font-size: 2rem;
+  }
+  .content > p {
+    font-size: 1rem;
+  }
+  .shape {
+    height: 400px;
+    width: 400px;
+    top: -200px;
+    left: -200px;
+  }
+  .content > a {
+    padding: 0.5rem 1rem;
   }
 }

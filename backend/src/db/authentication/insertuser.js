@@ -10,7 +10,6 @@ module.exports = insertsignup = async (number, name, email) => {
       name,
       email,
       id,
-      token: "",
     });
     return id;
   } catch (err) {
