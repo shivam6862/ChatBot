@@ -1,21 +1,13 @@
 "use client";
-import { useContext } from "react";
 import Image from "next/image";
 import { FaHandsClapping } from "react-icons/fa6";
 import classes from "../../styles/About.module.css";
 import Header from "../../components/home/Header";
-import ThemeContext from "../../store/theme/Theme-context";
 import ContactLogo from "../../components/home/ContactLogo";
 
 export default function About() {
-  const themeCtx = useContext(ThemeContext);
-
   return (
-    <div
-      className={
-        themeCtx.theme ? classes["dark-theme"] : classes["light_theme"]
-      }
-    >
+    <div className={classes.container}>
       <Header />
       <div className={classes.box}>
         <p>
@@ -25,6 +17,7 @@ export default function About() {
           src={"/img/thank_you_tinkeringlab.gif"}
           width={200}
           height={200}
+          alt="thank_you"
         />
       </div>
       <div className={classes.bottom_footer}>

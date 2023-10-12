@@ -31,7 +31,12 @@ const KnowAboutCompany = () => {
             <button>Watch Instruction lessons</button>
           </div>
           <div className={classes.top_images}>
-            <Image src={"/img/learn_with_me.png"} width={1500} height={800} />
+            <Image
+              src={"/img/learn_with_me.png"}
+              width={1500}
+              height={800}
+              alt="learn"
+            />
           </div>
         </div>
         <div className={classes.bottom}>

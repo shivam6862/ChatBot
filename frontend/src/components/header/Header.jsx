@@ -8,6 +8,7 @@ import AuthenticationContext from "../../store/authentication/Authentication-con
 import { FaUserCircle } from "react-icons/fa";
 import ConfirmLogout from "./ConfirmLogout";
 import Backdrop from "../../ui/Backdrop";
+import Link from "next/link";
 
 const Header = ({ id }) => {
   const router = useRouter();
@@ -45,7 +46,11 @@ const Header = ({ id }) => {
           acceptLogotHandler={acceptLogotHandler}
         />
       )}
-      <Image src="/logo.jpg" width={50} height={50} alt="chat" />
+      <div className={classes.left_logo}>
+        <Link href={"/"}>
+          <Image src="/logo.jpg" width={50} height={50} alt="chat" />
+        </Link>
+      </div>
       <div className={classes.title}>
         <h3>Chat Bot {id}</h3>
         <div className={classes.right_part}>

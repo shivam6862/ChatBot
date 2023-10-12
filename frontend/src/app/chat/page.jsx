@@ -8,6 +8,8 @@ import LoadingSpinner from "../../ui/LoadingSpinner";
 import ChatBot from "../../components/chatBot/ChatBot";
 import { useRouterPush } from "../../hook/useRouterPush";
 import Footer from "../../components/footer/Footer";
+import { BsCaretRightSquare } from "react-icons/bs";
+import classes from "../../styles/Chat.module.css";
 
 const ChatPages = () => {
   const { routerPushChange } = useRouterPush();
@@ -20,7 +22,11 @@ const ChatPages = () => {
     currentURL == "" ? "new" + v4() : currentURL
   );
   const [initialRender, setInitialRender] = useState(true);
+  const [isOpenNewchat, setIsOpenNewchat] = useState(false);
 
+  const toggleNewChat = () => {
+    setIsOpenNewchat((prev) => !prev);
+  };
   const onSelect = (event) => {
     routerPushChange(event);
   };
@@ -40,35 +46,41 @@ const ChatPages = () => {
 
   if (isLoading)
     return (
-      <LoadingSpinner
-        minHeight={"100vh"}
-        width={"64px"}
-        height={"64px"}
-        border={"6"}
-      />
+      <div className={classes.loadingSpinner}>
+        <LoadingSpinner
+          minHeight={"100vh"}
+          width={"64px"}
+          height={"64px"}
+          border={"6"}
+        />
+      </div>
     );
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <div style={{ flex: "1" }}>
+    <div className={classes.container}>
+      <div className={classes.box}>
+        <div
+          className={`${classes.left} ${
+            isOpenNewchat ? "" : classes.displayNone
+          }`}
+        >
           <NewChat
             setConversationId={setConversationId}
             conversationId={conversationId}
             setInitialRender={setInitialRender}
             setChat={setChat}
+            setIsOpenNewchat={toggleNewChat}
           />
         </div>
-        <div style={{ flex: "4" }}>
+        <div
+          className={`${classes.buttons} ${
+            isOpenNewchat ? classes.displayNone : ""
+          }`}
+          onClick={toggleNewChat}
+        >
+          <BsCaretRightSquare size={18} />
+        </div>
+        <div className={classes.right}>
           <ChatBot
             id={conversationId}
             chat={chat}

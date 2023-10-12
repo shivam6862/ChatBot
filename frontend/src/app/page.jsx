@@ -1,25 +1,18 @@
 "use client";
-import { useContext } from "react";
 import classes from "../styles/home/Home.module.css";
 import Header from "../components/home/Header";
 import HomeTitle from "../components/home/homeTitle";
-import ThemeContext from "../store/theme/Theme-context";
 import AboutHome from "../components/home/AboutHome";
 import KnowAboutCompany from "../components/home/KnowAboutCompany";
 
-export default function Home() {
-  const themeCtx = useContext(ThemeContext);
-
+const Home = () => {
   return (
-    <div
-      className={
-        themeCtx.theme ? classes["dark-theme"] : classes["light_theme"]
-      }
-    >
+    <div className={classes.container}>
       <Header />
       <HomeTitle />
       <AboutHome />
       <KnowAboutCompany />
     </div>
   );
-}
+};
+export default Home;

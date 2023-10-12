@@ -14,7 +14,6 @@
   justify-content: center;
   align-items: flex-start;
   width: -webkit-fill-available;
-  background-color: #f6f6f7;
   padding: 4rem 2rem;
   gap: 1rem;
 }
@@ -33,20 +32,22 @@
   margin: 0;
   font-size: 3rem;
   font-weight: bold;
+  color: var(--black-color);
 }
 .top_contant > p {
   padding: 0;
   margin: 0;
   font-size: 1.2rem;
+  color: var(--black-color);
 }
 .top_contant > button {
   all: unset;
   padding: 0.5rem 1rem;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   font-size: 1rem;
-  background-color: #0f0f10;
-  border-color: #0f0f10;
-  color: #fff;
+  background-color: var(--light-black-color);
+  border-color: var(--light-black-color);
+  color: var(--white-light-color);
   border-radius: 0.25rem;
   text-align: center;
   cursor: pointer;
@@ -61,7 +62,7 @@
 }
 .top_images > img {
   height: 500px;
-  width: auto;
+  width: -webkit-fill-available;
   position: absolute;
   top: -100px;
   left: 0;
@@ -88,6 +89,7 @@
   padding: 0;
   margin: 0;
   font-size: 1.05rem;
+  color: var(--black-color);
 }
 .bottom_items {
   display: flex;
@@ -99,6 +101,7 @@
 .bottom_item {
   font-size: 0.8rem;
   cursor: pointer;
+  color: var(--black-color);
 }
 .bottom_footer {
   display: flex;
@@ -123,18 +126,19 @@
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
+  color: var(--black-color);
 }
 .bottom_footer_left > button {
   all: unset;
   padding: 0.2rem 0.75rem;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   font-size: 1rem;
   border-radius: 0.25rem;
   text-align: center;
   cursor: pointer;
   background-color: #ee0007;
   border-color: #ee0007;
-  color: #fff;
+  color: var(--black-color);
 }
 .bottom_footer_right {
   flex: 1;
@@ -166,6 +170,7 @@
   .top_images > img {
     position: static;
     height: 400px;
+    width: auto;
   }
 }
 

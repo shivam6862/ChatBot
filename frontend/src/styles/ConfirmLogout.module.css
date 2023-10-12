@@ -7,8 +7,8 @@
 }
 .box {
   min-width: 25vw;
-  background-color: rgba(32, 33, 35, 1);
-  color: white;
+  background-color: var(--light-black-color);
+  color: var(--white-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,9 +19,9 @@
 }
 .heading {
   padding: 1.5rem;
-  color: rgba(217, 217, 227, 1);
+  color: var(--white-light-color);
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--white-color);
 }
 .bottom {
   padding: 1rem;
@@ -41,15 +41,16 @@
 }
 .cancel {
   background-color: rgba(52, 53, 65, 1);
-  border-color: rgba(86, 88, 105, 1);
-  color: rgba(217, 217, 227, 1);
+  border: 1px solid var(--white-color);
+  color: var(--black-color);
   padding: 0.3rem 0.5rem;
   border-radius: 6px;
   cursor: pointer;
 }
 .delete {
   background-color: rgba(185, 28, 28, 1);
-  color: rgba(255, 255, 255, 1);
+  border: 1px solid var(--white-color);
+  color: var(--black-color);
   padding: 0.3rem 0.5rem;
   border-radius: 6px;
   cursor: pointer;

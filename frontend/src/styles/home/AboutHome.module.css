@@ -13,7 +13,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: -webkit-fill-available;
-  background: #ffd000;
+  background: var(--yellow-color);
 }
 .top_contant {
   display: flex;
@@ -28,6 +28,7 @@
   flex: 1;
   font-size: 2.5rem;
   font-weight: bold;
+  color: var(--black-color);
 }
 .top_right {
   flex: 1;
@@ -40,14 +41,15 @@
 .top_right > input {
   all: unset;
   appearance: none;
-  border: 1px solid #0f0f10;
+  border: 1px solid var(--black-color);
   border-radius: 0.25rem;
   box-shadow: none;
   line-height: normal;
   padding: 0.75rem;
   width: 100%;
   font-size: 1rem;
-  background: white;
+  background: var(--white-color);
+  color: var(--black-color);
 }
 .top_right > button {
   all: unset;
@@ -57,7 +59,7 @@
   font-size: 1rem;
   background-color: #ee0007;
   border-color: #ee0007;
-  color: #fff;
+  color: var(--white-color);
   border-radius: 0.25rem;
   text-align: center;
   cursor: pointer;
@@ -69,7 +71,11 @@
   align-items: center;
   gap: 1rem;
   padding: 4rem 0rem 0rem 0rem;
-  background: linear-gradient(#000c1e, #1b1b17), url("/img/background.png");
+  background: linear-gradient(
+      var(--black-000c1e--color),
+      var(--black-1b1b17--color)
+    ),
+    url("/img/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,14 +85,14 @@
   padding: 0rem;
   margin: 0rem;
   font-size: 3rem;
-  color: white;
+  color: var(--white-color);
   padding: 1rem 1.5rem;
 }
 .middle > p {
   padding: 0rem;
   margin: 0rem;
   font-size: 1.2rem;
-  color: white;
+  color: var(--white-color);
   padding: 1rem 1.5rem;
 }
 .middle > img {
@@ -99,7 +105,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: -webkit-fill-available;
-  background: #1b222f;
+  background: var(--black-1b222f--color);
 }
 .bottom_container {
   display: flex;
@@ -130,13 +136,13 @@
   margin: 0rem;
   font-size: 2.25rem;
   font-weight: bold;
-  color: white;
+  color: var(--white-color);
 }
 .bottom_right > p {
   padding: 0rem;
   margin: 0rem;
   font-size: 1.2rem;
-  color: white;
+  color: var(--white-color);
 }
 .last_part {
   width: -webkit-fill-available;
@@ -149,7 +155,7 @@
   gap: 1rem;
   width: -webkit-fill-available;
   padding: 4rem 1.5rem;
-  background: white;
+  background: var(--white-color);
 }
 .last_part_container > img {
   width: 100%;
@@ -160,14 +166,14 @@
   margin: 0rem;
   font-size: 2.25rem;
   font-weight: bold;
-  color: black;
+  color: var(--black-color);
   text-align: center;
 }
 .last_part_container > p {
   padding: 0rem;
   margin: 0rem;
   font-size: 1.2rem;
-  color: black;
+  color: var(--black-color);
   text-align: center;
 }
 @media screen and (max-width: 940px) {

@@ -3,9 +3,9 @@ const Footer = () => {
     <div
       style={{
         width: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        backgroundColor: "var(--light-black-color)",
         padding: "0.25rem",
-        color: "#ffffff",
+        color: "var(--white-light-color)",
         textAlign: "center",
         fontSize: "1rem",
         margin: "0rem",

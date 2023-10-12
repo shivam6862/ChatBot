@@ -32,7 +32,12 @@ const AboutHome = () => {
             quickly and with no coding. Drag and drop conversational elements,
             and test them in real time to design engaging chatbot Stories.
           </p>
-          <Image src={"/img/chatbot_flow_chat.png"} width={1500} height={700} />
+          <Image
+            src={"/img/chatbot_flow_chat.png"}
+            width={1500}
+            height={700}
+            alt="flow_chat"
+          />
         </div>
         <div className={classes.bottom}>
           <LineSvg top={"#1b1b17"} bottom={"#1b222f"} />
@@ -42,6 +47,7 @@ const AboutHome = () => {
                 src={"/img/chatbot_working.png"}
                 width={1000}
                 height={700}
+                alt="working"
               />
             </div>
             <div className={classes.bottom_right}>
@@ -55,9 +61,17 @@ const AboutHome = () => {
           </div>
         </div>
         <div className={classes.last_part}>
-          <LineSvg top={"#1b222f"} bottom={"#ffffff"} />
+          <LineSvg
+            top={"var(--black-1b222f--color)"}
+            bottom={"var(--white-color)"}
+          />
           <div className={classes.last_part_container}>
-            <Image src={"/img/our_users.png"} width={1500} height={800} />
+            <Image
+              src={"/img/our_users.png"}
+              width={1500}
+              height={800}
+              alt="users"
+            />
             <h1>Get more value from your favorite tools</h1>
             <p>
               Experience seamless conversations with our chatbot powered by

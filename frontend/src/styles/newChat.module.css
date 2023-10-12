@@ -1,5 +1,24 @@
 .container {
-  padding-top: 1rem;
+  padding-top: 0.2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 100%;
+  position: relative;
+}
+.toggle_newchat {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  z-index: 100;
+}
+.toggle_newchat > svg {
+  color: var(--black-color);
+}
+.toggle_newchat > svg:hover {
+  scale: 1.05;
+  color: var(--primary-color);
 }
 .items {
   display: flex;
@@ -11,10 +30,10 @@
   text-transform: uppercase;
 }
 .item {
-  color: black;
-  font-size: 1.2rem;
+  color: var(--black-color);
+  font-size: 0.8rem;
   width: -webkit-fill-available;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -26,6 +45,16 @@
 .item:hover {
   background: #b0b0be;
   opacity: 0.9;
+}
+.item_inside {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 145px;
 }
 .active {
   background: #b0b0be;
@@ -42,18 +71,18 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #474747;
+  background-color: var(--light-black-color);
   border-radius: 5px;
   z-index: 50;
 }
 .changeName > input {
   all: unset;
   border-radius: 6px;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   cursor: pointer;
-  padding: 0.5rem 0.75rem;
-  color: #474747;
-  background-color: white;
+  padding: 0.4rem 0.75rem;
+  color: var(--light-black-color);
+  background-color: var(--white-color);
   width: 75%;
 }
 .changeNameButtons {
@@ -61,14 +90,15 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   margin-right: 0.25rem;
 }
 .changeNameButtons > svg {
-  color: white;
+  color: var(--white-color);
 }
 .changeNameButtons > svg:hover {
   scale: 1.05;
+  color: var(--primary-color);
 }
 .backdropEditName {
   position: fixed;
@@ -80,4 +110,19 @@
   opacity: 0;
   z-index: 10;
   display: block;
+}
+@media screen and (max-width: 1140px) {
+  .item_inside {
+    width: 135px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .item_inside {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .item_inside {
+    width: 110px;
+  }
 }

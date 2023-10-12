@@ -1,0 +1,61 @@
+.loadingSpinner {
+  background: var(--light-black-color);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.left {
+  flex: 1;
+}
+.displayNone {
+  display: none;
+}
+.buttons {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 100;
+}
+.buttons > svg {
+  color: var(--black-color);
+}
+.buttons > svg:hover {
+  color: var(--primary-color);
+}
+.right {
+  flex: 5;
+}
+@media screen and (max-width: 1140px) {
+  .right {
+    flex: 4;
+  }
+}
+@media screen and (max-width: 940px) {
+  .right {
+    flex: 3;
+  }
+}
+@media screen and (max-width: 640px) {
+  .box {
+    position: relative;
+  }
+  .left {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background: var(--white-light-color);
+    height: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+}
