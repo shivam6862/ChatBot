@@ -22,6 +22,7 @@ const NewChat = ({
   setInitialRender,
   setChat,
   setIsOpenNewchat,
+  setMessageHistory,
 }) => {
   const {
     isLoading,
@@ -29,6 +30,8 @@ const NewChat = ({
     setData: setPrevData,
   } = useFetchUserPrevChatLink([]);
 
+  const { updateChatName } = useUpdateChatName();
+  const { deletechat } = useDeleteChat();
   const { routerPushChange } = useRouterPush();
 
   const [isDeleteHandler, setIsDeleteHandler] = useState({
@@ -51,14 +54,17 @@ const NewChat = ({
     });
   };
   const acceptDeleteChatHandler = async () => {
-    const response = await useDeleteChat(isDeleteHandler.id);
+    const response = await deletechat(isDeleteHandler.id);
     if (response.message == "success") {
       const updatedChat = prevchat.filter(
         (chat) => chat.id !== isDeleteHandler.id
       );
       setPrevData(updatedChat);
       setChat([]);
-      routerPushChange("new" + v4());
+      setMessageHistory("");
+      const newchatID = "new" + v4();
+      setConversationId(newchatID);
+      routerPushChange(newchatID);
     }
     setIsDeleteHandler({
       id: null,
@@ -88,10 +94,7 @@ const NewChat = ({
     });
   };
   const acceptEditNameHandler = async () => {
-    const response = await useUpdateChatName(
-      isEditHandler.id,
-      isEditHandler.name
-    );
+    const response = await updateChatName(isEditHandler.id, isEditHandler.name);
     if (response.message == "ok") {
       const updatedChat = prevchat.map((chat) => {
         if (chat.id === isEditHandler.id) {

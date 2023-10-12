@@ -1,23 +1,39 @@
 import { useLocalStorage } from "./useLocalStorage";
+import { useNotification } from "./useNotification";
 
-export const useDeleteChat = async (conversationId, name) => {
+export const useDeleteChat = () => {
+  const { NotificationHandler } = useNotification();
   const { fetchPersonalDetails } = useLocalStorage();
-  const user = fetchPersonalDetails();
-  const userId = user.data.id;
-  const authToken = user.token;
-  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/deletechat/${conversationId}/${userId}`;
 
-  const headers = new Headers({
-    Authorization: `${authToken}`,
-    "Content-Type": "application/json",
-  });
+  const deletechat = async (conversationId) => {
+    try {
+      const user = fetchPersonalDetails();
+      const userId = user.data.id;
+      const authToken = user.token;
+      const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/deletechat/${conversationId}/${userId}`;
 
-  const response = await fetch(url, {
-    method: "DELETE",
-    headers: headers,
-    body: JSON.stringify({}),
-  });
+      const headers = new Headers({
+        Authorization: `${authToken}`,
+        "Content-Type": "application/json",
+      });
 
-  const data = await response.json();
-  return data;
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: headers,
+        body: JSON.stringify({}),
+      });
+
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      console.log(err);
+      NotificationHandler("Check your connection!", "Error");
+      const data = {
+        error: "Check your connection!",
+        message: "Error!",
+      };
+      return data;
+    }
+  };
+  return { deletechat };
 };

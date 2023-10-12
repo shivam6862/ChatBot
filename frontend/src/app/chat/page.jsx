@@ -70,6 +70,7 @@ const ChatPages = () => {
             setInitialRender={setInitialRender}
             setChat={setChat}
             setIsOpenNewchat={toggleNewChat}
+            setMessageHistory={setMessageHistory}
           />
         </div>
         <div

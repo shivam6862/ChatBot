@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import { useNotification } from "./useNotification";
 
 export const useFetchUserChatById = (conversationId, defaultValue) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(defaultValue);
   const [messageHistory, setMessageHistory] = useState("");
+  const { NotificationHandler } = useNotification();
 
   useEffect(() => {
     const loadResources = async () => {
@@ -31,16 +33,23 @@ export const useFetchUserChatById = (conversationId, defaultValue) => {
         Authorization: `${authToken}`,
         "Content-Type": "application/json",
       });
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: headers,
+        });
 
-      const response = await fetch(url, {
-        method: "GET",
-        headers: headers,
-      });
-
-      const data = await response.json();
-      setData(data.conversation);
-      setMessageHistory(data.messageHistory);
-      setIsLoading(false);
+        const data = await response.json();
+        setData(data.conversation);
+        setMessageHistory(data.messageHistory);
+        setIsLoading(false);
+      } catch (err) {
+        console.log(err);
+        NotificationHandler("Check your connection!", "Error");
+        setData([]);
+        setMessageHistory("");
+        setIsLoading(false);
+      }
     };
     loadResources();
   }, [conversationId]);
