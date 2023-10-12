@@ -1,6 +1,6 @@
 .container {
-  background-color: var(--black-color);
-  color: var(--white-light-color);
+  background-color: var(--light-color);
+  color: var(--light-black-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +57,7 @@
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
+  color: var(--black-color);
 }
 .bottom_footer_left > button {
   all: unset;

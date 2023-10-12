@@ -160,9 +160,9 @@ const Header = () => {
           <label htmlFor="theme-toggle">
             <div>
               {themeCtx.theme ? (
-                <FiSun size={20} color="white" />
+                <BsMoonFill size={20} color="white" />
               ) : (
-                <BsMoonFill size={20} color="black" />
+                <FiSun size={20} color="black" />
               )}
             </div>
           </label>

@@ -18,7 +18,7 @@ export function ThemeContextProvider(props) {
     root.style.setProperty("--white-light-color", "#1b222f");
     root.style.setProperty("--light-black-color", "#f6f6f6");
     root.style.setProperty(
-      "--background-header-color",
+      "var(--background-header-color)",
       "var(--background-header-contract-color)"
     );
   }
@@ -30,7 +30,7 @@ export function ThemeContextProvider(props) {
     root.style.setProperty("--white-light-color", "#f6f6f6");
     root.style.setProperty("--light-black-color", "#1b222f");
     root.style.setProperty(
-      "--background-header-color",
+      "var(--background-header-color)",
       "var(--background-header-color)"
     );
   }

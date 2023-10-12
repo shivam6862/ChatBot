@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import classes from "../../styles/home/AboutHome.module.css";
 import LineSvg from "../../../public/LineSvg";
 import Image from "next/image";
+import AuthenticationContext from "../../store/authentication/Authentication-context";
 
 const AboutHome = () => {
+  const authenticationContextCtx = useContext(AuthenticationContext);
+
   return (
     <div className={classes.container}>
       <div className={classes.box}>
@@ -20,7 +24,13 @@ const AboutHome = () => {
                 id="email"
                 placeholder="Enter your Email address.."
               />
-              <button>Sign up free</button>
+              <button
+                onClick={() => {
+                  authenticationContextCtx.onShow("signupOpen");
+                }}
+              >
+                Sign up free
+              </button>
             </div>
           </div>
           <LineSvg top={"#ffd000"} bottom={"#000c1e"} />

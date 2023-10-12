@@ -22,7 +22,7 @@ const ChatPages = () => {
     currentURL == "" ? "new" + v4() : currentURL
   );
   const [initialRender, setInitialRender] = useState(true);
-  const [isOpenNewchat, setIsOpenNewchat] = useState(false);
+  const [isOpenNewchat, setIsOpenNewchat] = useState(true);
 
   const toggleNewChat = () => {
     setIsOpenNewchat((prev) => !prev);

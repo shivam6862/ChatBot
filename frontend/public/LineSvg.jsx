@@ -3,7 +3,6 @@ const LineSvg = ({ top, bottom }) => {
     <svg
       preserveAspectRatio="none"
       viewBox="0 0 1440 36"
-      class="u-block"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="100%" height="100%" fill={top}></rect>
