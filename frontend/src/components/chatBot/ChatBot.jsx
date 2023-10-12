@@ -20,7 +20,7 @@ const ChatBot = ({
   const AuthenticationCtx = useContext(AuthenticationContext);
   const { routerPushChange } = useRouterPush();
   const { create } = usecreateConversation();
-
+  const { sendUserChat } = useSendUserChatById();
   useEffect(() => {
     const functioning = async () => {
       if (
@@ -40,20 +40,20 @@ const ChatBot = ({
   }, [id.substr(0, 3) == "new" && chat.length == 2]);
 
   useEffect(() => {
-    const sendUserChatById = async () => {
+    const sendUserChatId = async () => {
       if (initialRender) {
         setInitialRender(false);
         return;
       }
 
-      const sendUserChatById = async () => {
+      const sendUserChat_Id = async () => {
         if (chat.length <= 2) return;
-        const response = await useSendUserChatById(id, chat, messageHistory);
+        const response = await sendUserChat(id, chat, messageHistory);
         console.log(response);
       };
-      sendUserChatById();
+      sendUserChat_Id();
     };
-    sendUserChatById();
+    sendUserChatId();
   }, [chat]);
 
   return (
