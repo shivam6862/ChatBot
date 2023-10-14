@@ -1,7 +1,10 @@
 import { useLocalStorage } from "./useLocalStorage";
+import { useNotification } from "./useNotification";
 
 const usecreateConversation = () => {
+  const { NotificationHandler } = useNotification();
   const { fetchPersonalDetails } = useLocalStorage();
+
   const create = async (name, chat, conversationId, messageHistory) => {
     const userId = fetchPersonalDetails().data.id;
     try {
@@ -26,6 +29,8 @@ const usecreateConversation = () => {
       return data;
     } catch (error) {
       console.log(error);
+      NotificationHandler("Check your connection!", "Error");
+      return "false";
     }
   };
   return { create };
